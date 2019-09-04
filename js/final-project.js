@@ -13,9 +13,10 @@ function onReady() {
         }
     }
 
-    /* 2. on "About" click, (1) menu button slides up and (2) open overlay */
+    /* 2. on "About" click, (1) menu button slides up; (2) lines return; and (3) open overlay */
     function openOverlay() {
         $('.dropdown-content').slideUp();
+        $('.line1, .line2').toggleClass('change');
         $('#aboutMe').css('width', '100%');
     }
     
