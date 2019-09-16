@@ -7,9 +7,11 @@
 
         <title>Zack Davis - Contact</title>
 
+        <link rel="stylesheet" href="css/materialize.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/final-project.css">
         <link rel="stylesheet" href="css/final-project-contact.css">
+        
 
         <link href="https://fonts.googleapis.com/css?family=Inconsolata|Barlow:400,400i|Roboto&display=swap" rel="stylesheet">
 
@@ -18,13 +20,13 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
         </script>
-
         <script src="js/final-project.js"></script>
         <script src="js/final-project-contact.js"></script>
     </head>
     
     <body>
         <div class="background-image"></div>
+
         <div id="aboutMe" class="overlay">
             <a href="javascript:void(0)" class="closebtn">X</a>
             <div class="overlay-content">
@@ -37,32 +39,67 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="top">
-                <h2><a href="final-project-landing-page.html">Zack Davis</a></h2>
+        <div class="top">
+            <h2><a href="final-project-landing-page.html">Zack Davis</a></h2>
 
-                <div class="dropdown">
-                    <div class="menu">
-                        <div></div>
-                        <div class="menu-icon">
-                            <div class="circle"></div>
-                            <div class="lines">
-                                <div class="line1"></div>
-                                <div class="line2"></div>
-                            </div>
+            <div class="dropdown">
+                <div class="menu">
+                    <div></div>
+                    <div class="menu-icon">
+                        <div class="circle"></div>
+                        <div class="lines">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="dropdown-content">
-                        <a href="final-project-landing-page.html">Home</a>
-                        <a href="#" id="about">About</a>
-                        <a href="final-project-art-page.html">Works</a>
-                        <a href="final-project-contact.html">Contact</a>
-                    </div>
+                <div class="dropdown-content">
+                    <a href="final-project-landing-page.html">Home</a>
+                    <a href="#" id="about">About</a>
+                    <a href="final-project-art-page.html">Works</a>
+                    <a href="final-project-contact.html">Contact</a>
                 </div>
             </div>
-            
-            
         </div>
+            
+        <div class="blurred-box">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first-name" type="text">
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last-name" type="text">
+                            <label for="last-name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" id="email-row">
+                            <input id="email" type="email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <select>
+                        <option value="" disabled selected>Select Title</option>
+                        <option value="1">Pricing Inquiry</option>
+                        <option value="2">Commission</option>
+                        <option value="3">Other</option>
+                    </select>
+                    <label for="select">Select Title</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea" data-length="1000"></textarea>
+                            <label for="textarea1">Message</label>
+                        </div>
+                    </div>
+                </form>
+                <div class="button">Submit</div>
+            </div>
+        </div>
+
+        <script src="js/materialize.js"></script>
     </body>
 </html>
