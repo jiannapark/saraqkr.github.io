@@ -3,77 +3,58 @@
 function onReady() {
 
     // 1. on .year buttons click, toggle list-year menus to show/hide
-    function onYear19Click() {
-        if ($('.list-19').hasClass('active')) {
-            $('.list-19').slideUp();
-            $('.list-19').toggleClass('active');
+
+    function onYearClick(listChosen) {
+        if ($(listChosen).hasClass('active')) {
+            $(listChosen).slideUp();
+            $(listChosen).toggleClass('active');
         } else {
-            $('.list-19').slideDown();
-            $('.list-19').toggleClass('active');
+            $(listChosen).slideDown();
+            $(listChosen).toggleClass('active');
         }
     }
 
-    function onYear18Click() {
-        if ($('.list-18').hasClass('active')) {
-            $('.list-18').slideUp();
-            $('.list-18').toggleClass('active');
-        } else {
-            $('.list-18').slideDown();
-            $('.list-18').toggleClass('active');
-        }
-    }
-
-    $('.year-19').click(onYear19Click);
-    $('.year-18').click(onYear18Click);
+    $('.year-19').click(function() {
+        onYearClick('.list-19');
+    });
+    $('.year-18').click(function() {
+        onYearClick('.list-18');
+    });
 
 
 
-    // 2. on year>artwork buttons click, (1) remove class .artwork to turn off 'display:none' and (2) turn it back on for other artworks
 
-    function on19oneClick() {
+    // 2. on year>artwork buttons click, (1) remove that artwork to turn off 'display:none' and (2) turn it back on for other artworks
+
+    const artworks = ['#juicy', '#rubber', '#lasso', '#untitled', '#silly', '#aftermath', '#god']
+    const artworkIndex = ['.list-19>#one', '.list-19>#two', '.list-19>#three', '.list-19>#four', '.list-18>#one', '.list-18>#two', '.list-18>#three']
+
+    function onArtworkIndexClick(artworkClicked) {
         $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#juicy').removeClass('artwork');
+        $(artworkClicked).removeClass('artwork');
     }
 
-    function on19twoClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#rubber').removeClass('artwork');
-    }
-
-    function on19threeClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#lasso').removeClass('artwork');
-    }
-
-    function on19fourClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#untitled').removeClass('artwork');
-    }
-
-    function on18oneClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#silly').removeClass('artwork');
-    }
-
-    function on18twoClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#aftermath').removeClass('artwork');
-    }
-
-    function on18threeClick() {
-        $('#juicy, #rubber, #lasso, #untitled, #silly, #aftermath, #god').addClass('artwork');
-        $('#god').removeClass('artwork');
-    }
-
-    $('.list-19>#one').click(on19oneClick);
-    $('.list-19>#two').click(on19twoClick);
-    $('.list-19>#three').click(on19threeClick);
-    $('.list-19>#four').click(on19fourClick);
-    $('.list-18>#one').click(on18oneClick);
-    $('.list-18>#two').click(on18twoClick);
-    $('.list-18>#three').click(on18threeClick);
-
-
+    $(artworkIndex[0]).click(function () {
+        onArtworkIndexClick(artworks[0])
+    });
+    $(artworkIndex[1]).click(function () {
+        onArtworkIndexClick(artworks[1])
+    });
+    $(artworkIndex[2]).click(function () {
+        onArtworkIndexClick(artworks[2])
+    });
+    $(artworkIndex[3]).click(function () {
+        onArtworkIndexClick(artworks[3])
+    });
+    $(artworkIndex[4]).click(function () {
+        onArtworkIndexClick(artworks[4])
+    });
+    $(artworkIndex[5]).click(function () {
+        onArtworkIndexClick(artworks[5])
+    });
+    $(artworkIndex[6]).click(function () {
+        onArtworkIndexClick(artworks[6])
+    });
 
 
 
@@ -102,41 +83,20 @@ function onReady() {
 
     var i
 
-    for (i = 0; i < imagePathsJuicy.length; i++) {
-        juicyImage = '<img src="' + imageDirJuicy + imagePathsJuicy[i] + '" alt=juicy height=200 width=200>';
-        $('#juicy').append(juicyImage);
+    function imageLoads(dir, array, collection) {
+        for (i = 0; i < array.length; i++) {
+            image = '<img src="' + dir + array[i] + '" alt=' + collection + ' width=200 align=middle>';
+            $(collection).append(image);
+        }
     }
 
-    for (i = 0; i < imagePathsRubber.length; i++) {
-        rubberImage = '<img src="' + imageDirRubber + imagePathsRubber[i] + '" alt=rubber height=200 width=200>';
-        $('#rubber').append(rubberImage);
-    }
-
-    for (i = 0; i < imagePathsLasso.length; i++) {
-        lassoImage = '<img src="' + imageDirLasso + imagePathsLasso[i] + '" alt=lasso height=200 width=200>';
-        $('#lasso').append(lassoImage);
-    }
-
-    for (i = 0; i < imagePathsUntitled.length; i++) {
-        untitledImage = '<img src="' + imageDirUntitled + imagePathsUntitled[i] + '" alt=untitled height=200 width=200>';
-        $('#untitled').append(untitledImage);
-    }
-
-    for (i = 0; i < imagePathsSilly.length; i++) {
-        sillyImage = '<img src="' + imageDirSilly + imagePathsSilly[i] + '" alt=silly height=200 width=200>';
-        $('#silly').append(sillyImage);
-    }
-
-    for (i = 0; i < imagePathsAftermath.length; i++) {
-        aftermathImage = '<img src="' + imageDirAftermath + imagePathsAftermath[i] + '" alt=aftermath height=200 width=200>';
-        $('#aftermath').append(aftermathImage);
-    }
-
-    for (i = 0; i < imagePathsGod.length; i++) {
-        godImage = '<img src="' + imageDirGod + imagePathsGod[i] + '" alt=agod height=200 width=200>';
-        $('#god').append(godImage);
-    }
-
+    imageLoads(imageDirJuicy, imagePathsJuicy, artworks[0]);
+    imageLoads(imageDirRubber, imagePathsRubber, artworks[1]);
+    imageLoads(imageDirLasso, imagePathsLasso, artworks[2]);
+    imageLoads(imageDirUntitled, imagePathsUntitled, artworks[3]);
+    imageLoads(imageDirSilly, imagePathsSilly, artworks[4]);
+    imageLoads(imageDirAftermath, imagePathsAftermath, artworks[5]);
+    imageLoads(imageDirGod, imagePathsGod, artworks[6]);
 }
 
 $('document').ready(onReady);
