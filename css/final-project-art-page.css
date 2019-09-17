@@ -9,28 +9,34 @@ body {
     display: flex;
     height: 100%;
     width: 100%;
-    padding: 5%;
+    padding: 8%;
     position: absolute;
+    left: 0;
 }
 
 .left {
     margin-right: 1em;
 }
 
+.right {
+    padding: 0 3%;
+    align-content: center;
+}
+
 .catalog {
-    max-width: 6em;
+    width: 6em;
 }
 
 .year-19, .year-18 {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 1em;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
-    font-size: 15px;
+    font-size: 1em;
 }
 
 .year-19:hover, .year-18:hover {
@@ -38,15 +44,22 @@ body {
 }
 
 .list-19, .list-18 {
-    padding: 0 18px;
+    padding: 0 1em;
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
     transition: 0.2s ease;
 }
 
-.list-19>p, .list-18>p {
+.catalog p {
     cursor: pointer;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 3%;
+    font-style: italic;
 }
 
 .artwork{
@@ -54,9 +67,66 @@ body {
 }
 
 img {
+    margin: 1em;
+    cursor: pointer;
     transition: 0.3s;
+    max-width: 33%;
+    max-height: 33%;
 }
 
-/* img:hover {
-    transition to bigger size
-} */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img:hover {
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 50%;
+        max-height: 50%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        margin-right: 0;
+    }
+
+    .catalog {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 3em;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 0.6em;
+    }
+
+    .list-wrapper {
+        width: inherit;
+        margin: .5em;
+    }
+
+    .title {
+        font-size: .75em;
+    }
+    
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: inherit;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    .year-19, .year-18 {
+        font-size: 0.75em;
+    }
+
+}
