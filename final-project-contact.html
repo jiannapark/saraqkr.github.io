@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="css/final-project.css">
         <link rel="stylesheet" href="css/final-project-contact.css">
         
-
         <link href="https://fonts.googleapis.com/css?family=Inconsolata|Barlow:400,400i|Roboto&display=swap" rel="stylesheet">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,40 +63,44 @@
         </div>
             
         <div class="blurred-box">
-            <div class="row">
-                <form class="col s12">
+            <form action="final-project-contact-success.html" method="GET">
+                <fieldset>
                     <div class="row">
-                        <div class="input-field col s6">
-                            <input id="first-name" type="text">
-                            <label for="first-name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="last-name" type="text">
-                            <label for="last-name">Last Name</label>
-                        </div>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="first-name" type="text">
+                                    <label for="first-name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="last-name" type="text">
+                                    <label for="last-name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12" id="email-row">
+                                    <input id="email" type="email">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <select>
+                                <option value="" disabled selected>Select Title</option>
+                                <option value="1">Pricing Inquiry</option>
+                                <option value="2">Commission</option>
+                                <option value="3">Other</option>
+                            </select>
+                            <label for="select">Select Title</label>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="textarea1" class="materialize-textarea" data-length="1000"></textarea>
+                                    <label for="textarea1">Message</label>
+                                </div>
+                            </div>
+                        </form>
+                        <input class="button" type="submit" name="Click Me!">
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12" id="email-row">
-                            <input id="email" type="email">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <select>
-                        <option value="" disabled selected>Select Title</option>
-                        <option value="1">Pricing Inquiry</option>
-                        <option value="2">Commission</option>
-                        <option value="3">Other</option>
-                    </select>
-                    <label for="select">Select Title</label>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="textarea1" class="materialize-textarea" data-length="1000"></textarea>
-                            <label for="textarea1">Message</label>
-                        </div>
-                    </div>
-                </form>
-                <div class="button">Submit</div>
-            </div>
+                </fieldset>
+            </form>
         </div>
 
         <script src="js/materialize.js"></script>
