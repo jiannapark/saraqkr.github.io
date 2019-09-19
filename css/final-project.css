@@ -24,7 +24,7 @@
     font-family: 'Inconsolata', monospace;
     text-align: center;
     line-height: 2.5em;
-    margin-top: 30px;
+    margin-top: 2rem;
     color: #ddd;
 }
 
@@ -38,9 +38,9 @@
 
 .overlay .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
+    top: 1.25rem;
+    right: 2.8rem;
+    font-size: 3.75em;
     text-decoration: none;
     color: #ddd;
 }
@@ -173,9 +173,9 @@ h2:hover {
     }
 
     .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
+        font-size: 2.5em;
+        top: 1em;
+        right: 2.2em;
     }
 }
 
