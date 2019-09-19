@@ -36,7 +36,7 @@ h3 {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     overflow: scroll;
-    padding: 10px;
+    padding: .65em;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
 }
@@ -56,12 +56,12 @@ h3 {
 .button {
     border: 1px solid #9e9e9e;
     border-radius: 3px;
-    padding: 10px 16px;
+    padding: .65em 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    margin: 4px 2px;
+    margin: .25em .125em;
     background: rgba(255, 255, 255, 0.2);
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
@@ -80,16 +80,16 @@ h3 {
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 812px) {
+@media screen and (max-height: 414px) {
     .background-image {
-        height: 700px;
+        height: 800px;
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
     .blurred-box {
         width: 20rem;
-        height: 22rem;
+        height: 22.25rem;
     }
 
     input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
