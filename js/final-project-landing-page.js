@@ -1,4 +1,4 @@
-// 1 function specific to the landing page
+// 1 function specific to the landing page --> edit: decided not to use jquery for background slideshow, because images during transition either expanded or shrank due to different image sizes (I wanted them to be fixed & to simply fade in and out, which was made possible by css)
 
 /* 1. make the background image automatically fade to next index item in the array every 8s */
 
