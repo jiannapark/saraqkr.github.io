@@ -105,7 +105,7 @@ img:hover {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 5em;
+    padding-top: 4em;
     left: 0;
     top: 0;
     width: 100%;
@@ -120,7 +120,7 @@ img:hover {
     position: absolute;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: auto;
     padding-bottom: 3em;
     cursor: auto;
 }
@@ -130,7 +130,7 @@ img:hover {
     position: relative;
     /* background-color: #fefefe; */
     margin: auto;
-    padding: 3em;
+    padding: 20px;
     height: inherit;
     /* width: 90%;
     max-width: 1200px; */
@@ -180,7 +180,7 @@ img:hover {
   /* Position the "next button" to the right */
   .next {
     right: 0;
-    margin-right: 3em;
+    margin-right: 20px;
     border-radius: 3px 0 0 3px;
   }
   
@@ -192,6 +192,19 @@ img:hover {
   
 
 @media screen and (max-width: 375px) {
+    .list-19, .list-18 {
+        height: 100px;
+    }
+
+    .list-18>p {
+        height: 20px;
+        line-height: 2;
+    }
+
+    .image-container {
+        margin: 1em auto;
+    }
+
     .container {
         flex-direction: column;
     }
@@ -217,10 +230,10 @@ img:hover {
     .title {
         font-size: .75em;
     }
-    
+/*     
     img {
         width: 90%;
-    }
+    } */
     
     .year-19, .year-18 {
         font-size: 0.75em;
