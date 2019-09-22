@@ -1,4 +1,4 @@
-// # functions specific to art page
+// 4 functions specific to art page
 
 function onReady() {
 
@@ -59,7 +59,7 @@ function onReady() {
 
 
 
-    // add images by loop without flooding html
+    // 3. add images by loop without flooding html
     const imageDirJuicy = 'Zack Thesis Portfolio/Images/Davis_Zachary_04_Juicy Fruit Falling from Yonder Blue_mixed media_8x4x3ft_Sculpture_2019/'
     const imagePathsJuicy = ['04 Center.jpg', '04 Detail 1.jpg', 'P1070197 3.jpg', '04 Detail 2.jpg', 'P1070122 2.JPG', '04 Detail 3.jpg', 'P1070110.JPG']
 
@@ -85,8 +85,12 @@ function onReady() {
 
     function imageLoads(dir, array, collection) {
         for (i = 0; i < array.length; i++) {
-            image = '<img src="' + dir + array[i] + '" alt=' + collection + ' width=200 align=middle>';
-            $(collection).append(image);
+            image = '<div class="image-container"><img src="' + dir + array[i] + '" class="demo" id="' + i + '" alt=' + collection + ' width=200 align=middle></div>';
+            outerContainer = collection + '>.image-container-container';
+            $(outerContainer).append(image);
+
+            slide = '<div class="mySlides"><img id="lightbox" src="' + dir + array[i] + '" alt=' + collection + ' width=200></div>'
+            $('.modal-content').append(slide);
         }
     }
 
@@ -97,6 +101,94 @@ function onReady() {
     imageLoads(imageDirSilly, imagePathsSilly, artworks[4]);
     imageLoads(imageDirAftermath, imagePathsAftermath, artworks[5]);
     imageLoads(imageDirGod, imagePathsGod, artworks[6]);
+
+
+
+
+
+
+    // 4. on img click, enable slideshow modal
+    function openModal() {
+        $('#myModal').css('display', 'block');
+    }
+  
+    function closeModal() {
+        $('#myModal').css('display', 'none');
+    }
+  
+    var slideIndex = 0;
+  
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+  
+    function showSlides(n) {
+        var s;
+        var slides = $('.mySlides');
+
+        if (n >= slides.length) {
+            slideIndex = 0
+        }
+        if (n < 0) {
+            slideIndex = slides.length - 1
+        }
+        for (s = 0; s < slides.length; s++) {
+            $(slides[s]).css('display', 'none');
+        }
+        $(slides[slideIndex]).css('display', 'block');
+    }
+
+    const demoIndex = ['.demo#0', '.demo#1', '.demo#2', '.demo#3', '.demo#4', '.demo#5', '.demo#6', '.demo#7', '.demo#8', '.demo#9', '.demo#10', '.demo#11']
+
+    $(demoIndex[0]).click(function() {
+        currentSlide(0);
+    });
+    $(demoIndex[1]).click(function() {
+        currentSlide(1);
+    });
+    $(demoIndex[2]).click(function() {
+        currentSlide(2);
+    });
+    $(demoIndex[3]).click(function() {
+        currentSlide(3);
+    });
+    $(demoIndex[4]).click(function() {
+        currentSlide(4);
+    });
+    $(demoIndex[5]).click(function() {
+        currentSlide(5);
+    });
+    $(demoIndex[6]).click(function() {
+        currentSlide(6);
+    });
+    $(demoIndex[7]).click(function() {
+        currentSlide(7);
+    });
+    $(demoIndex[8]).click(function() {
+        currentSlide(8);
+    });
+    $(demoIndex[9]).click(function() {
+        currentSlide(9);
+    });
+    $(demoIndex[10]).click(function() {
+        currentSlide(10);
+    });
+    $(demoIndex[11]).click(function() {
+        currentSlide(11);
+    });
+    
+    $('.demo').click(openModal);
+    $('.close').click(closeModal);
+    $('.prev').click(function() {
+        plusSlides(-1)
+    });
+    $('.next').click(function() {
+        plusSlides(1)
+    });
 }
 
 $('document').ready(onReady);
