@@ -89,6 +89,7 @@ function onReady() {
             outerContainer = collection + '>.image-container-container';
             $(outerContainer).append(image);
 
+            // need to figure out how to pair the same demo and slide images, so when you click on '.demo#rubber 1' the slide of same image '#lightbox rubber 1' opens
             slide = '<div class="mySlides"><img id="lightbox" src="' + dir + array[i] + '" alt=' + collection + ' width=200></div>'
             $('.modal-content').append(slide);
         }
